@@ -1,0 +1,21 @@
+.register__container {
+    min-height: 100vh;
+    display: flex;
+}
+
+.register__box {
+    align-items: center;
+    width: 26rem;
+    height: min-content;
+    padding: 2rem;
+    margin: auto;
+}
+
+.register__box__link {
+    width: 100%;
+}
+
+.register__box__link a {
+    text-decoration: none;
+}
+

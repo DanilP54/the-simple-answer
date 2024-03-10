@@ -7,7 +7,7 @@ import Divider from '@mui/material/Divider';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { useAuth } from '../../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 
 
 const StyledMenu = styled((props) => (
@@ -34,12 +34,10 @@ const StyledMenu = styled((props) => (
         boxShadow:
             'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
         '& .MuiMenu-list': {
-            // padding: '4px 0',
         },
         '& .MuiMenuItem-root': {
             '& .MuiSvgIcon-root': {
                 fontSize: 18,
-                // color: theme.palette.text.w,
                 marginRight: theme.spacing(1.5),
             },
             '&:active': {
@@ -56,6 +54,7 @@ const UserMenu = ({ email }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const { log_out } = useAuth()
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -70,7 +69,7 @@ const UserMenu = ({ email }) => {
 
     const handleDocumentClick = (e) => {
         console.log(e.target)
-        if(anchorEl && !anchorEl.contains(e.target)) {
+        if (anchorEl && !anchorEl.contains(e.target)) {
             handleClose()
         }
     }
@@ -81,9 +80,7 @@ const UserMenu = ({ email }) => {
     }, [anchorEl])
 
     return (
-        <div style={{
-            display: 'flex',
-        }}>
+        <div style={{ display: 'flex' }}>
             <Button
                 sx={{ marginLeft: 'auto' }}
                 id="demo-customized-button"
@@ -111,12 +108,10 @@ const UserMenu = ({ email }) => {
                     <FileCopyIcon />
                     Change password
                 </MenuItem>
-                <Divider
-                    // sx={{ my: 0.5 }}
-                />
+                <Divider />
                 <MenuItem sx={{ color: 'white' }} onClick={handleLogout} disableRipple>
-                        <LogoutIcon />
-                        Log out
+                    <LogoutIcon />
+                    Log out
                 </MenuItem>
 
             </StyledMenu>

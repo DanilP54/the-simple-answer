@@ -2,20 +2,17 @@ import React from "react"
 import { useAuth } from "../context/AuthContext"
 import { useQuery } from "@tanstack/react-query"
 
-async function getQuestinsList() {
-    const response = await fetch('https://auth-test-e4a35-default-rtdb.europe-west1.firebasedatabase.app/data.json')
-    if (!response.ok) {
-        throw new Error('Any Error')
-    }
+const getQuestinsList = async () => {
+    let response = await fetch('https://auth-test-e4a35-default-rtdb.europe-west1.firebasedatabase.app/data.json')
     return response.json()
 }
 
 
-const useFetchQuestionsList = () => {
+const useRequestQuestions = () => {
 
     const { currentUser } = useAuth()
 
-    const [randomQuestion, setRandomQuestion] = React.useState('')
+    const [question, setQuestion] = React.useState('')
     
 
     const { data, isLoading, isError } = useQuery({
@@ -25,25 +22,25 @@ const useFetchQuestionsList = () => {
     })
     
 
-    const getNextRandomQuestion = () => {
+    const getRandomQuestion = () => {
         let qst = data.questionList[Math.floor(Math.random() * data.questionList.length)]
-        setRandomQuestion(qst)
+        setQuestion(qst)
     }
 
     React.useEffect(() => {
         if(data && !currentUser) {
-            getNextRandomQuestion()
+            getRandomQuestion()
         }
     }, [data, currentUser])
 
     return {
-        randomQuestion,
+        question,
         isError,
         isLoading,
-        getNextRandomQuestion,
+        getRandomQuestion,
         currentUser,
-        setRandomQuestion
+        setQuestion
     }
 }
 
-export { useFetchQuestionsList }
+export { useRequestQuestions }

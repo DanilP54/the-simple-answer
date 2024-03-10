@@ -1,6 +1,6 @@
 import React from "react"
 
-const useFetchImageAnswer = () => {
+const useRequestAnswer = () => {
 
     const [data, setData] = React.useState(null)
     const [error, setError] = React.useState('')
@@ -38,4 +38,4 @@ const useFetchImageAnswer = () => {
 
 
 
-export { useFetchImageAnswer }
+export { useRequestAnswer }

@@ -1,52 +1,36 @@
 import React from "react";
-import { TextField, IconButton, styled, Button } from "@mui/material";
+import { TextField, IconButton, Button } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { grey } from "@mui/material/colors";
-import { useFetchQuestionsList } from "../../hooks/useFetchQuestionsList";
+import { useRequestQuestions } from "../../hooks/useRequestQuestions";
+import styles from './styles/Input.module.css';
 
-const InputForQuestion = ({ getResultAnswer }) => {
+const Input = ({ getResultAnswer }) => {
 
     const {
-        randomQuestion,
+        question,
         isError,
         isLoading,
-        getNextRandomQuestion,
+        getRandomQuestion,
         currentUser,
-        setRandomQuestion 
-    } = useFetchQuestionsList()
+        setQuestion
+    } = useRequestQuestions()
 
     const inputRef = React.useRef(null)
-    
+
     const onChangeInput = (e) => {
-        if (currentUser) setRandomQuestion(e.target.value)
+        if (currentUser) setQuestion(e.target.value)
     }
 
     return (
-        <div style={{
-            width: '100%',
-            height: '200px',
-            padding: '10px',
-            display: 'flex',
-            flexDirection: 'column',
-            rowGap: '20px',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}
-        >
-
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                columnGap: '10px',
-                width: '55%',
-            }}>
+        <div className={styles.input__wrapper}>
+            <div className={styles.input__box}>
                 <TextField
                     ref={inputRef}
                     type="text"
                     onChange={onChangeInput}
-                    placeholder="Enter your question..."
-                    value={randomQuestion ? randomQuestion : undefined}
+                    placeholder="Write your question..."
+                    value={question}
                     variant='standard'
                     color="warning"
                     height={'100%'}
@@ -63,29 +47,25 @@ const InputForQuestion = ({ getResultAnswer }) => {
                     }}
                 />
                 <IconButton
-                    sx={{
-                        borderRadius: 0,
-                    }}
-                    onClick={() => getResultAnswer(randomQuestion, inputRef.current.querySelector('textarea'))}
+                    sx={{ borderRadius: 0, }}
+                    onClick={() => getResultAnswer(question, inputRef.current.querySelector('textarea'))}
                 >
                     <SendIcon color="warning" />
                 </IconButton>
 
             </div>
             <Button
-                onClick={getNextRandomQuestion}
+                onClick={getRandomQuestion}
                 color="warning"
                 variant="text"
-                style={{
-                    display: 'block',
-                    width: '200px',
-                    borderRadius: '0px'
-                }}
                 sx={{
                     backgroundColor: 'rgba(237, 108, 2, 0.04)',
                     '& .MuiLoadingButton-loadingIndicator': {
                         color: grey[500],
-                    }
+                    },
+                    display: 'block',
+                    width: '200px',
+                    borderRadius: '0px'
                 }}
             >
                 Random question
@@ -95,4 +75,4 @@ const InputForQuestion = ({ getResultAnswer }) => {
 }
 
 
-export default InputForQuestion;
+export default Input;

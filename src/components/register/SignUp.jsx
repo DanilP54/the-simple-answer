@@ -1,15 +1,15 @@
 import React from "react";
 import { Stack, Typography, FormControlLabel, Checkbox } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
-import { yellow, grey, orange } from "@mui/material/colors";
+import { Link } from "react-router-dom";
+import { orange } from "@mui/material/colors";
 import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
-import { FormButton } from "./ui/FormButton";
-import { FormInput } from "./ui/FormInput";
-import { LinearLoader } from "../ui/LinearLoader";
+import { FormButton } from "./FormButton";
+import { FormInput } from "./FormInput";
+import { LinearLoader } from "../liner_loader/LinearLoader";
 import { useInput } from "../hooks/useInput";
 import { Error } from "./Error";
-import { useRequest } from "../hooks/useRequest";
+import { useRequestAuth } from "../hooks/useRequestAuth";
+import styles from './styles/Form.module.css';
 
 
 const SignUp = () => {
@@ -17,7 +17,7 @@ const SignUp = () => {
     const { sign_up } = useAuth()
     const [showErrorValidate, setShowErrorValidate] = React.useState(false)
     const [showErrorConfirumPassword, setShowErrorConfirumPassword] = React.useState(false)
-    const { isLoading, sendRequest, errorResponse } = useRequest()
+    const { isLoading, sendRequest, errorResponse } = useRequestAuth()
 
     const email = useInput('', {
         pattern: /.+@.+\..+/i,
@@ -46,12 +46,8 @@ const SignUp = () => {
 
     return (
         <>
-            {
-                isLoading && <LinearLoader />
-            }
-            <Typography
-                variant="h4" sx={{ fontSize: '2.5rem', color: yellow[900] }}
-            >Sign Up</Typography>
+            {isLoading && <LinearLoader />}
+            <Typography variant="h4" className={styles.title}>Sign Up</Typography>
             {
                 showErrorValidate &&
                 <Error>
@@ -71,13 +67,10 @@ const SignUp = () => {
                 </Error>
             }
             <Stack
+                className={styles.form}
                 component='form'
                 noValidate
                 spacing={4}
-                width='100%'
-                style={{
-                    marginTop: '3rem',
-                }}
             >
                 <FormInput
                     onChange={email.onChange}
@@ -106,15 +99,14 @@ const SignUp = () => {
                     size='small'
                     variant='filled'
                 />
-                <div style={{ justifyItems: 'flex-start', marginTop: '0' }}>
-                    <FormControlLabel sx={{
-                        marginTop: '5px',
-                        color: orange[900],
-                        '& .MuiSvgIcon-root': {
-                            fontSize: '20px',
-                            color: orange[900]
-                        }
-                    }} control={<Checkbox />} label="Save password" />
+                <div className={styles.label__box}>
+                    <FormControlLabel
+                        sx={{
+                            '& .MuiSvgIcon-root': {
+                                fontSize: '20px',
+                                color: orange[900]
+                            }
+                        }} control={<Checkbox />} label="Save password" />
                 </div>
                 <FormButton
                     onClick={handleRequest}
@@ -124,12 +116,11 @@ const SignUp = () => {
                     Sign Up
                 </FormButton>
             </Stack>
-            <Typography sx={{ color: grey[500] }} variant="span">
-                Already have an account?<Link style={{
-                    color: grey[500],
-                    textDecoration: 'none'
-                }} to='/register'> Log In</Link>
-            </Typography>
+            <div className={styles.form__links}>
+                <Typography variant="span">
+                    Already have an account?<Link to='/register'> Log In</Link>
+                </Typography>
+            </div>
         </>
     )
 }

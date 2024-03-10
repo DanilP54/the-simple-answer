@@ -1,11 +1,11 @@
 import { Alert, Stack, Typography } from "@mui/material";
 import { grey, orange } from "@mui/material/colors";
-import { FormButton } from "./ui/FormButton";
-import { FormInput } from "./ui/FormInput";
+import { FormButton } from "./FormButton";
+import { FormInput } from "./FormInput";
 import { useInput } from "../hooks/useInput";
 import { Error } from "./Error";
-import { useRequest } from "../hooks/useRequest";
-import { LinearLoader } from "../ui/LinearLoader";
+import { useRequestAuth } from "../hooks/useRequestAuth";
+import { LinearLoader } from "../liner_loader/LinearLoader";
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const ForgotPassword = () => {
 
     const { reset_password } = useAuth()
     const [showErrorValidate, setShowErrorValidate] = React.useState(false)
-    const { errorResponse, isLoading, sendRequest, successResetPasword } = useRequest()
+    const { errorResponse, isLoading, sendRequest, successResetPasword } = useRequestAuth()
 
     const email = useInput('', {
         pattern: /.+@.+\..+/i,
@@ -33,24 +33,18 @@ const ForgotPassword = () => {
     if (successResetPasword) {
         return (
             <>
-                {
-                    isLoading && <LinearLoader />
-                }
+                {isLoading && <LinearLoader />}
                 <Alert style={{ color: 'white', alignItems: 'center' }} variant="outlined" severity="success">
                     An email has been sent to reset your password. Please enter your email and new password again
                 </Alert>
-                <Link style={{
-                    color: grey[400]
-                }} to='/register'>Sign In</Link>
+                <Link style={{ color: grey[400] }} to='/register'>Sign In</Link>
             </>
         )
     }
 
     return (
         <>
-            {
-                isLoading && <LinearLoader />
-            }
+            {isLoading && <LinearLoader />}
             <Typography
                 variant="h4"
                 sx={{ fontSize: '2.5rem', color: orange[900] }}

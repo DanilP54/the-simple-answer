@@ -7,7 +7,8 @@ import {
     signOut,
     sendPasswordResetEmail
 } from "firebase/auth";
-import { LinearLoader } from "../ui/LinearLoader";
+
+import { LinearLoader } from "../liner_loader/LinearLoader";
 
 const AuthContext = React.createContext()
 
