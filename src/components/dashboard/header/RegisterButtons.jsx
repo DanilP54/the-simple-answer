@@ -7,7 +7,11 @@ const RegisterButtons = () => {
             <Link style={{ textDecoration: 'none' }} to='/register'>
                 <Button
                     color="warning"
-                    variant="text"
+                    variant="outlined"
+                    sx={{
+                        fontFamily: "Honk, system-ui",
+                        fontSize: '1rem'
+                    }}
                 >
                     Log In
                 </Button>
@@ -15,8 +19,12 @@ const RegisterButtons = () => {
             <Link style={{ textDecoration: 'none' }} to='/register/signup'>
                 <Button
                     color="info"
-                    variant="text"
-                    sx={{ display: 'block' }}>
+                    variant="outlined"
+                    sx={{
+                        display: 'block',
+                        fontFamily: "Honk, system-ui",
+                        fontSize: '1rem'
+                    }}>
                     Sign Up
                 </Button>
             </Link>

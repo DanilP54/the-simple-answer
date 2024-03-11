@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css'
 import HomePage from './pages/HomePage';
 import { AuthProvider } from './components/context/AuthContext';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';

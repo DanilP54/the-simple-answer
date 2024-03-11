@@ -1,10 +1,15 @@
 .title {
-    font-size: 2.5rem;
-    color: #f57f17;
+    font-size: var(--formTitleFontSize);
+    color: var(--formTitleColor);
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
 }
 
 .form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
 }
 
 .form__links {
@@ -14,25 +19,24 @@
     row-gap: 10px;
 }
 
-.form__links > a {
+.form__links>a {
     text-decoration: none;
-    color: #9e9e9e;
+    color: var(--formLinksColor);
 }
 
-.form__links > a:hover {
+.form__links>a:hover {
     text-decoration: underline;
 }
 
 .form__links span {
-    color: #9e9e9e;
+    color: var(--formLinksColor);
 }
 
-.form__links span > a {
+.form__links span>a {
     text-decoration: none;
-    color: #9e9e9e;
+    color: var(--formLinksColor);
 }
 
-.form__links span > a:hover {
+.form__links span>a:hover {
     text-decoration: underline;
 }
-

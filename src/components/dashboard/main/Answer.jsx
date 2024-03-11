@@ -1,7 +1,9 @@
 import Skeleton from '@mui/material/Skeleton';
-import defaultImage from '../../../assets/default_image.svg';
+// import defaultImage from '../../../assets/svg/default_image.svg';
+import defaultImageSecond from '../../../assets/svg/default_image_second.svg';
 import styles from './styles/Answer.module.css';
-import { Error } from '../../register/Error';
+import { Error } from '../../error/Error';
+import { Loader } from './Loader';
 
 const Answer = ({ data, isLoading, isError }) => {
 
@@ -9,7 +11,7 @@ const Answer = ({ data, isLoading, isError }) => {
         <div className={styles.answer}>
             {
                 isLoading
-                    ? <Skeleton width={100} height={70} sx={{
+                    ? <Skeleton width={100} height={36} sx={{
                         backgroundColor: 'rgb(63, 91, 255, .1)',
                         borderRadius: 0,
                         margin: 'auto',
@@ -32,16 +34,10 @@ const Answer = ({ data, isLoading, isError }) => {
                     : <div className={styles.answer__image}>
                         {
                             isLoading
-                                ? <Skeleton  sx={{
-                                    backgroundColor: 'rgb(63, 91, 255, .1)',
-                                    borderRadius: 0,
-                                    margin: 'auto',
-                                }} 
-                                width={'80%'} 
-                                height={'100%'} />
+                                ? <Loader />
                                 : <img
                                     className={data?.image ? styles.img__active : styles.img__default}
-                                    src={data?.image ? data.image : defaultImage} alt="image" />
+                                    src={data?.image ? data.image : defaultImageSecond} alt="image" />
                         }
                      </div>
             }

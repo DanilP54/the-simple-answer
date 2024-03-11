@@ -1,0 +1,6 @@
+.error {
+    color: var(--errorTextColor);
+    height: min-content;
+    align-items: center;
+    border: none;
+}

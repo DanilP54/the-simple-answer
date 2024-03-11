@@ -1,4 +1,4 @@
-import { UserMenu } from "./UserMenu";
+import { AccountMenu } from "./AccountMenu";
 import RegisterButtons from "./RegisterButtons";
 import { useAuth } from "../../context/AuthContext";
 import styles from './styles/Header.module.css';
@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             {
-                currentUser ? <UserMenu email={currentUser.email} /> : <RegisterButtons />
+                currentUser ? <AccountMenu email={currentUser.email} /> : <RegisterButtons />
             }   
         </header>
     )

@@ -6,7 +6,7 @@ import { FormButton } from "./FormButton";
 import { FormInput } from "./FormInput";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import { useInput } from "../hooks/useInput";
-import { Error } from "./Error";
+import { Error } from "../error/Error";
 import { useRequestAuth } from "../hooks/useRequestAuth";
 import styles from './styles/Form.module.css';
 
@@ -51,18 +51,14 @@ const SignIn = () => {
                 </Error>
             }
             {!!errorResponse && <Error error={!!errorResponse}>{errorResponse}</Error>}
-            <Stack
-                className={styles.form}
-                component='form'
-                noValidate
-                spacing={4}
-            >
+            <form className={styles.form}>
                 <FormInput
                     onChange={email.onChange}
                     value={email.value}
                     type='email'
                     label='Email adress'
                     variant="filled"
+                    size='small'
                 />
                 <FormInput
                     onChange={password.onChange}
@@ -70,6 +66,7 @@ const SignIn = () => {
                     type='password'
                     label='Password'
                     variant='filled'
+                    size='small'
                 />
                 <FormButton
                     onClick={handleRequest}
@@ -78,7 +75,7 @@ const SignIn = () => {
                 >
                     Sign In
                 </FormButton>
-            </Stack>
+            </form>
             <div className={styles.form__links}>
                 <Link to='/register/forgotpassword'>Forgot Password?</Link>
                 <Typography variant="span">

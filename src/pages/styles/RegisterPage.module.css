@@ -6,8 +6,9 @@
 .register__box {
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 20px;
     align-items: center;
+    justify-content: space-between;
     width: 26rem;
     height: min-content;
     padding: 2rem;

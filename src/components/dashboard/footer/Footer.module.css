@@ -1,0 +1,19 @@
+.footer {
+    padding: 10px 0;
+}
+
+.footer__link {
+    display: flex;
+    justify-content: center;
+    color: var(--footerLinkColor);
+    /* font-size: clamp(11px, 1.7vw, 14px) !important; */
+}
+
+.footer__link a {
+    color: var(--footerLinkColor);
+    text-decoration: none;
+}
+
+.footer__link a:hover {
+    text-decoration: underline;
+}

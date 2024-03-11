@@ -3,12 +3,13 @@ import { grey, orange } from "@mui/material/colors";
 import { FormButton } from "./FormButton";
 import { FormInput } from "./FormInput";
 import { useInput } from "../hooks/useInput";
-import { Error } from "./Error";
+import { Error } from "../error/Error";
 import { useRequestAuth } from "../hooks/useRequestAuth";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import styles from './styles/Form.module.css';
 
 
 const ForgotPassword = () => {
@@ -46,8 +47,8 @@ const ForgotPassword = () => {
         <>
             {isLoading && <LinearLoader />}
             <Typography
+                className={styles.title}
                 variant="h4"
-                sx={{ fontSize: '2.5rem', color: orange[900] }}
             >Reset Password</Typography>
             {
                 showErrorValidate &&
