@@ -3,11 +3,11 @@ import { Button } from "@mui/material";
 
 const RegisterButtons = () => {
     return (
-        <div style={{ display: 'flex', columnGap: '10px' }}>
-            <Link style={{ textDecoration: 'none', marginLeft: 'auto' }} to='/register'>
+        <>
+            <Link style={{ textDecoration: 'none' }} to='/register'>
                 <Button
                     color="warning"
-                    variant="outlined"
+                    variant="text"
                 >
                     Log In
                 </Button>
@@ -15,12 +15,12 @@ const RegisterButtons = () => {
             <Link style={{ textDecoration: 'none' }} to='/register/signup'>
                 <Button
                     color="info"
-                    variant="outlined"
+                    variant="text"
                     sx={{ display: 'block' }}>
                     Sign Up
                 </Button>
             </Link>
-        </div>
+        </>
     )
 }
 

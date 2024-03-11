@@ -1,7 +1,6 @@
 import React from "react";
 import { Stack, Typography, FormControlLabel, Checkbox } from "@mui/material";
 import { Link } from "react-router-dom";
-import { orange } from "@mui/material/colors";
 import { useAuth } from "../context/AuthContext";
 import { FormButton } from "./FormButton";
 import { FormInput } from "./FormInput";
@@ -99,15 +98,6 @@ const SignUp = () => {
                     size='small'
                     variant='filled'
                 />
-                <div className={styles.label__box}>
-                    <FormControlLabel
-                        sx={{
-                            '& .MuiSvgIcon-root': {
-                                fontSize: '20px',
-                                color: orange[900]
-                            }
-                        }} control={<Checkbox />} label="Save password" />
-                </div>
                 <FormButton
                     onClick={handleRequest}
                     disabled={email.isEmpty || password.isEmpty || confirumPassword.isEmpty}

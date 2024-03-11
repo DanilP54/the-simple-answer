@@ -19,11 +19,12 @@ const useRequestQuestions = () => {
         queryKey: ['questionList'],
         queryFn: getQuestinsList,
         staleTime: 60000,
+        retry: false
     })
     
 
-    const getRandomQuestion = () => {
-        let qst = data.questionList[Math.floor(Math.random() * data.questionList.length)]
+    const getRandomQuestion = () => { 
+        let qst = data.questionList[Math.floor(Math.random() * data.questionList.length)] 
         setQuestion(qst)
     }
 

@@ -17,23 +17,23 @@ const Input = ({ getResultAnswer }) => {
     } = useRequestQuestions()
 
     const inputRef = React.useRef(null)
-
+    
     const onChangeInput = (e) => {
-        if (currentUser) setQuestion(e.target.value)
+        if (currentUser || isError) setQuestion(e.target.value)
     }
 
     return (
         <div className={styles.input__wrapper}>
             <div className={styles.input__box}>
                 <TextField
+                    className={styles.input}
                     ref={inputRef}
                     type="text"
                     onChange={onChangeInput}
-                    placeholder="Write your question..."
+                    placeholder={isLoading ? 'Loading...' : 'Write your question...'}
                     value={question}
                     variant='standard'
                     color="warning"
-                    height={'100%'}
                     fullWidth
                     multiline={!currentUser}
                     tabIndex={0}
@@ -41,35 +41,38 @@ const Input = ({ getResultAnswer }) => {
                         '& .MuiInput-root': {
                             color: grey[400],
                             height: '100%',
-                        },
-                        textAlign: 'center',
-                        fontSize: '13px',
+                            fontSize: 'clamp(14px, 2vw, 16px)'
+                        }  
                     }}
                 />
                 <IconButton
                     sx={{ borderRadius: 0, }}
                     onClick={() => getResultAnswer(question, inputRef.current.querySelector('textarea'))}
                 >
-                    <SendIcon color="warning" />
+                    <SendIcon color="primary" />
                 </IconButton>
 
             </div>
-            <Button
-                onClick={getRandomQuestion}
-                color="warning"
-                variant="text"
-                sx={{
-                    backgroundColor: 'rgba(237, 108, 2, 0.04)',
-                    '& .MuiLoadingButton-loadingIndicator': {
-                        color: grey[500],
-                    },
-                    display: 'block',
-                    width: '200px',
-                    borderRadius: '0px'
-                }}
-            >
-                Random question
-            </Button>
+            {
+                !isError &&
+                <Button
+                    onClick={getRandomQuestion}
+                    color="primary"
+                    variant="text"
+                    sx={{
+                        backgroundColor: 'rgba(237, 108, 2, 0.04)',
+                        '& .MuiLoadingButton-loadingIndicator': {
+                            color: grey[500],
+                        },
+                        display: 'block',
+                        width: '200px',
+                        borderRadius: '0px'
+                    }}
+                >
+                    Random question
+                </Button>
+            }
+
         </div >
     )
 }

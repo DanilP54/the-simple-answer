@@ -36,12 +36,3 @@
     text-decoration: underline;
 }
 
-.label__box {
-    justify-items: flex-start; 
-    margin-top: 0;
-}
-
-.label__box label {
-    margin-top: 5px;
-    color: #e65100;
-}

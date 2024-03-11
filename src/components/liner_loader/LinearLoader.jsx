@@ -1,15 +1,9 @@
 import { LinearProgress } from "@mui/material";
-
+import styles from './LinerLoader.module.css';
 
 const LinearLoader = () => {
     return (
-        <div style = {{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            width: '100%',
-            marginTop: 0
-        }}>
+        <div className={styles.liner__loader}>
             <LinearProgress />
         </div >
     )

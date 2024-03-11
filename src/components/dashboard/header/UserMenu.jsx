@@ -104,11 +104,11 @@ const UserMenu = ({ email }) => {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem sx={{ color: 'white' }} onClick={handleClose} disableRipple>
+                {/* <MenuItem sx={{ color: 'white' }} onClick={handleClose} disableRipple>
                     <FileCopyIcon />
                     Change password
                 </MenuItem>
-                <Divider />
+                <Divider /> */}
                 <MenuItem sx={{ color: 'white' }} onClick={handleLogout} disableRipple>
                     <LogoutIcon />
                     Log out

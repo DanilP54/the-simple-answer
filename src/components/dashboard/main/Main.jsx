@@ -5,15 +5,15 @@ import styles from './styles/Main.module.css';
 
 
 const Main = () => {
-    
-    const {data, isLoading, error, getResultAnswer} = useRequestAnswer()
+
+    const { data, isLoading, isError, getResultAnswer } = useRequestAnswer()
 
     return (
         <main className={styles.main}>
-            <div className={styles.main__wrapper}>
-                <Answer data={data} isLoading={isLoading} />
+            <div className={styles.content__wrapper}>
+                <Answer data={data} isLoading={isLoading} isError={isError} />
+                <Input getResultAnswer={getResultAnswer} />
             </div>
-            <Input getResultAnswer={getResultAnswer} />
         </main>
     )
 }

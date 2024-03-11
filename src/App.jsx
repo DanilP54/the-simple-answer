@@ -22,9 +22,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/register',
-        element: <React.Suspense fallback={<LinearLoader />}>
-            <RegisterPage />
-        </React.Suspense>,
+        element: <React.Suspense fallback={<LinearLoader />}><RegisterPage /></React.Suspense>,
         errorElement: <ErrorBoundary />,
         children: [
             {

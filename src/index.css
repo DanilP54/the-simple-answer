@@ -8,6 +8,8 @@ body {
     width: 100vw;
     height: 100svh;
     margin: 0 auto;
-    background: radial-gradient(circle, rgb(26, 118, 63) 0%, rgb(3, 9, 72) 100%);
+    background-color: hsl(0, 100%, 2%);
+    /* background-color: rgb(14, 14, 14); */
+    /* background: radial-gradient(circle, rgb(26, 118, 63) 0%, rgb(3, 9, 72) 100%); */
     /* background: url('./assets/background.jpg') no-repeat center / cover; */
 }

@@ -50,12 +50,7 @@ const SignIn = () => {
                     {'Email must be valid and password must be at least 5 characters long'}
                 </Error>
             }
-            {
-                !!errorResponse &&
-                <Error error={!!errorResponse}>
-                    {errorResponse}
-                </Error>
-            }
+            {!!errorResponse && <Error error={!!errorResponse}>{errorResponse}</Error>}
             <Stack
                 className={styles.form}
                 component='form'
