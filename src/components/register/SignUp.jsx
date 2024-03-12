@@ -75,7 +75,6 @@ const SignUp = () => {
                     label='Email adress'
                     size='small'
                     variant='filled'
-                    size='small'
                 />
                 <FormInput
                     onChange={password.onChange}
@@ -85,7 +84,6 @@ const SignUp = () => {
                     label='Password'
                     size='small'
                     variant='filled'
-                    size='small'
                 />
                 <FormInput
                     onChange={confirumPassword.onChange}

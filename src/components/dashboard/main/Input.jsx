@@ -18,10 +18,11 @@ const Input = ({ getResultAnswer }) => {
     } = useRequestQuestions()
 
     const inputRef = React.useRef(null)
-    
+
     const onChangeInput = (e) => {
         if (currentUser || isError) setQuestion(e.target.value)
     }
+
 
     return (
         <div className={styles.input__wrapper}>
@@ -41,11 +42,12 @@ const Input = ({ getResultAnswer }) => {
                     tabIndex={0}
                     sx={{
                         '& .MuiInput-root': {
-                            color: grey[400],
+                            color: grey[100],
                             height: '100%',
                             fontSize: 'clamp(13px, 2vw, 15px)',
-                            
-                        }  
+                            fontFamily: "Poiret One, sans-serif",
+
+                        }
                     }}
                 />
                 <IconButton
@@ -53,8 +55,10 @@ const Input = ({ getResultAnswer }) => {
                     onClick={() => getResultAnswer(question, inputRef.current.querySelector('textarea'))}
                     size="small"
                     color="warning"
-                >   
-                    <SendIcon color="primary" />
+                >
+                    <SendIcon sx={{
+                        color: 'rgb(18, 135, 156)',
+                    }} />
                 </IconButton>
 
             </div>
@@ -62,11 +66,11 @@ const Input = ({ getResultAnswer }) => {
                 !isError &&
                 <Button
                     onClick={getRandomQuestion}
-                    color="primary"
+                    // color="primary"
                     variant="contained"
                     size="small"
                     sx={{
-                        // backgroundColor: 'rgba(237, 108, 2, 0.04)',
+                        backgroundColor: 'rgb(18, 135, 156)',
                         '& .MuiLoadingButton-loadingIndicator': {
                             color: grey[500],
                         },

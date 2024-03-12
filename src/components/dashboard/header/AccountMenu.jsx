@@ -4,7 +4,7 @@ import ListItem from '@mui/material/ListItem';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton, alpha } from '@mui/material';
+import { IconButton, ListItemButton, alpha } from '@mui/material';
 import { MenuItem } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -33,10 +33,14 @@ const SimpleDialog = ({ email, open, onClose }) => {
                 '& .MuiPaper-root': {
                     backgroundColor: alpha(blue[900], .4),
                     backdropFilter: 'blur(10px)',
-                    height: 'min-content',
+                    height: '8rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    '& .MuiList-root': {
+                        width: '100%',
+                        height: '100%',       
+                    }
                 }
 
             }}>
@@ -52,19 +56,33 @@ const SimpleDialog = ({ email, open, onClose }) => {
             <List sx={{
                 pt: 0,
                 backgroundColor: 'transparent',
+                padding: 0,
             }}>
 
-                <ListItem disableGutters>
-                    <MenuItem
+                <ListItem sx={{
+                    padding: 0,
+                    height: '100%'
+                }} disableGutters>
+                    <ListItemButton
                         autoFocus
                         onClick={() => handleLogOut()}
-                        sx={{ margin: 'auto', fontWeight: '600', color: grey[400], width: '100%' }}
+                        sx={{ 
+                            margin: 'auto', 
+                            fontWeight: '600', 
+                            color: grey[400], 
+                            width: '100%',
+                            height: '100%',
+                            padding: 0,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
                         disableRipple>
                         <LogoutIcon sx={{
                             marginRight: '10px'
                         }} />
                         Log out
-                    </MenuItem>
+                    </ListItemButton>
                 </ListItem>
             </List>
         </Dialog>
@@ -93,14 +111,14 @@ const AccountMenu = ({ email }) => {
                 <div className={styles.mobile__menu} >
                     <MenuIcon color='warning' />
                 </div>
-        </IconButton >
-    <SimpleDialog
-        email={email}
-        open={open}
-        onClose={handleClose}
-    />
+            </IconButton >
+            <SimpleDialog
+                email={email}
+                open={open}
+                onClose={handleClose}
+            />
         </div >
-    
+
     );
 }
 
