@@ -39,7 +39,9 @@ const router = createBrowserRouter([
             }
         ]
     }
-])
+], {
+    basename: '/the-simple-answer/'
+})
 
 
 function App() {

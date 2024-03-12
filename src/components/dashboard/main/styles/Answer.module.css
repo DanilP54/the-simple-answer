@@ -9,8 +9,7 @@
 }
 
 .answer__title {
-    font-family: "Honk", "system-ui";
-    /* font-family: "Bungee Spice", sans-serif; */
+    font-family: "Honk", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;

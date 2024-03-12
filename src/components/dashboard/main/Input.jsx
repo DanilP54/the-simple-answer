@@ -44,8 +44,8 @@ const Input = ({ getResultAnswer }) => {
                         '& .MuiInput-root': {
                             color: grey[100],
                             height: '100%',
-                            fontSize: 'clamp(13px, 2vw, 15px)',
-                            fontFamily: "Poiret One, sans-serif",
+                            fontSize: 'clamp(15px, 2vw, 17px)',
+                            fontFamily: "Poiret One",
 
                         }
                     }}
@@ -65,8 +65,8 @@ const Input = ({ getResultAnswer }) => {
             {
                 !isError &&
                 <Button
+                    className={styles.button}
                     onClick={getRandomQuestion}
-                    // color="primary"
                     variant="contained"
                     size="small"
                     sx={{

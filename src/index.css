@@ -1,6 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@font-face {
+    font-display: swap; 
+    font-family: 'Honk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/honk/honk-v1-latin-regular.woff2') format('woff2');
+  }
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Poiret One';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/poiret_one/poiret-one-v16-cyrillic_latin-regular.woff2') format('woff2');
+  }
+
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Bungee Spice';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/bungee_spice/bungee-spice-v11-latin-regular.woff2') format('woff2');
+  }
 
 
 
@@ -22,6 +43,6 @@
 body {
     font-style: normal;
     width: 100vw;
-    height: 100svh;
+    min-height: 100svh;
     background-color: hsl(0, 100%, 2%);
 }
