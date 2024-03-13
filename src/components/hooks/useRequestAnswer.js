@@ -7,7 +7,7 @@ const useRequestAnswer = () => {
     const [isLoading, setLoading] = React.useState(false)
 
     const getResultAnswer = async (questionValue, ref) => {
-        console.log(ref);
+        
         if (questionValue) {
             try {
                 setLoading(true)

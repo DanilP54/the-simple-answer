@@ -12,7 +12,7 @@ const Main = () => {
         <main className={styles.main}>
             <div className={styles.content__wrapper}>
                 <Answer data={data} isLoading={isLoading} isError={isError} />
-                <Input getResultAnswer={getResultAnswer} />
+                <Input getResultAnswer={getResultAnswer} loadingAnswer={isLoading} />
             </div>
         </main>
     )

@@ -6,7 +6,7 @@ import { useRequestQuestions } from "../../hooks/useRequestQuestions";
 import styles from './styles/Input.module.css';
 
 
-const Input = ({ getResultAnswer }) => {
+const Input = ({ getResultAnswer, loadingAnswer }) => {
 
     const {
         question,
@@ -54,6 +54,7 @@ const Input = ({ getResultAnswer }) => {
                 <IconButton
                     sx={{ borderRadius: 0, }}
                     onClick={() => getResultAnswer(question, input)}
+                    disabled={loadingAnswer}
                     size="small"
                     color="warning"
                 >
