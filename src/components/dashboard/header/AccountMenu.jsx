@@ -5,7 +5,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton, ListItemButton, alpha } from '@mui/material';
-import { MenuItem } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useAuth } from '../../context/AuthContext';
@@ -39,7 +38,7 @@ const SimpleDialog = ({ email, open, onClose }) => {
                     justifyContent: 'center',
                     '& .MuiList-root': {
                         width: '100%',
-                        height: '100%',       
+                        height: '100%',
                     }
                 }
 
@@ -66,10 +65,10 @@ const SimpleDialog = ({ email, open, onClose }) => {
                     <ListItemButton
                         autoFocus
                         onClick={() => handleLogOut()}
-                        sx={{ 
-                            margin: 'auto', 
-                            fontWeight: '600', 
-                            color: grey[400], 
+                        sx={{
+                            margin: 'auto',
+                            fontWeight: '600',
+                            color: grey[400],
                             width: '100%',
                             height: '100%',
                             padding: 0,
@@ -91,7 +90,6 @@ const SimpleDialog = ({ email, open, onClose }) => {
 
 const AccountMenu = ({ email }) => {
     const [open, setOpen] = React.useState(false);
-    const { currentUser } = useAuth()
 
     const handleClickOpen = () => {
         setOpen(true);

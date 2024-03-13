@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, IconButton, Button } from "@mui/material";
+import { TextField, IconButton } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { grey } from "@mui/material/colors";
 import { useRequestQuestions } from "../../hooks/useRequestQuestions";
@@ -18,7 +18,8 @@ const Input = ({ getResultAnswer }) => {
     } = useRequestQuestions()
 
     const inputRef = React.useRef(null)
-
+    const input = inputRef.current?.querySelector('input')
+    
     const onChangeInput = (e) => {
         if (currentUser || isError) setQuestion(e.target.value)
     }
@@ -36,7 +37,7 @@ const Input = ({ getResultAnswer }) => {
                     placeholder={isLoading ? 'Loading...' : 'Write your question...'}
                     value={question}
                     variant='standard'
-                    color="primary"
+                    color="warning"
                     fullWidth
                     multiline={!currentUser}
                     tabIndex={0}
@@ -52,7 +53,7 @@ const Input = ({ getResultAnswer }) => {
                 />
                 <IconButton
                     sx={{ borderRadius: 0, }}
-                    onClick={() => getResultAnswer(question, inputRef.current.querySelector('textarea'))}
+                    onClick={() => getResultAnswer(question, input)}
                     size="small"
                     color="warning"
                 >
@@ -63,28 +64,16 @@ const Input = ({ getResultAnswer }) => {
 
             </div>
             {
+
                 !isError &&
-                <Button
+                <button
+                    type="button"
                     className={styles.button}
                     onClick={getRandomQuestion}
-                    variant="contained"
-                    size="small"
-                    sx={{
-                        backgroundColor: 'rgb(18, 135, 156)',
-                        '& .MuiLoadingButton-loadingIndicator': {
-                            color: grey[500],
-                        },
-                        display: 'block',
-                        width: '200px',
-                        borderRadius: '0px',
-                        fontFamily: "Honk, system-ui",
-                        fontSize: '1rem'
-                    }}
                 >
-                    Random question
-                </Button>
+                    RANDOM QUESTION
+                </button>
             }
-
         </div >
     )
 }

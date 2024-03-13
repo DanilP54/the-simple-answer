@@ -70,7 +70,7 @@ const SignIn = () => {
                 />
                 <FormButton
                     onClick={handleRequest}
-                    disabled={email.isEmpty || password.isEmpty}
+                    disabled={isLoading ? true : email.isEmpty || password.isEmpty}
                     variant='outlined'
                 >
                     Sign In

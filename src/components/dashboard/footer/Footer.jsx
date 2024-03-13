@@ -14,10 +14,10 @@ const Footer = () => {
             {
                 !currentUser && !isError &&
                 <footer className={styles.footer}>
-                    <Typography sx={{
+                    <Typography className={styles.footer__link} sx={{
                         fontSize: 'clamp(14px, 1.7vw, 16px)',
-                        fontFamily: "Poiret One, sans-serif",
-                    }} fontSize={'none'} className={styles.footer__link}>
+                        fontFamily: "Poiret One",
+                    }} >
                         <Link to='/register' >
                             Sign up
                         </Link>

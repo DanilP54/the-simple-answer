@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         ]
     }
 ], {
-    basename: '/the-simple-answer/'
+    basename: import.meta.env.BASE_URL
 })
 
 

@@ -1,0 +1,27 @@
+.register__button_links {
+    text-decoration: none;
+}
+
+.register__button_links button {
+    font-family: "Honk", "system-ui"; 
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 71px;
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .register__button_links button:hover {
+        background-color: rgba(86, 9, 9, 0.1);
+    }
+}
+
+@media (hover: none) {
+    .register__button_links button:active {
+        background-color: rgba(86, 9, 9, 0.1);       
+    }
+}

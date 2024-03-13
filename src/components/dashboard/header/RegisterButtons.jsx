@@ -1,32 +1,18 @@
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import styles from './styles/RegisterButton.module.css';
 
 const RegisterButtons = () => {
     return (
         <>
-            <Link style={{ textDecoration: 'none' }} to='/register'>
-                <Button
-                    color="warning"
-                    variant="text"
-                    sx={{
-                        fontFamily: "Honk, system-ui",
-                        fontSize: '1rem'
-                    }}
-                >
+            <Link className={styles.register__button_links} to='/register'>
+                <button>
                     Log In
-                </Button>
+                </button>
             </Link>
-            <Link style={{ textDecoration: 'none' }} to='/register/signup'>
-                <Button
-                    color="info"
-                    variant="text"
-                    sx={{
-                        display: 'block',
-                        fontFamily: "Honk, system-ui",
-                        fontSize: '1rem'
-                    }}>
+            <Link className={styles.register__button_links} to='/register/signup'>
+                <button>
                     Sign Up
-                </Button>
+                </button>
             </Link>
         </>
     )

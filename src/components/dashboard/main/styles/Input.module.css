@@ -20,3 +20,25 @@
 .input {
     text-align: center;
 }
+
+.button {
+    width: 200px;
+    height: 36px;
+    font-family: "Honk", "system-ui";
+    border: none;
+    outline: none;
+    background-color: rgb(18, 135, 156);
+
+}
+
+@media (hover: hover) {
+    .button:hover {
+        background-color: rgb(61, 24, 173);
+    }
+}
+
+@media (hover: none) {
+    .button:active {
+        background-color: rgb(61, 24, 173);
+    }
+}
