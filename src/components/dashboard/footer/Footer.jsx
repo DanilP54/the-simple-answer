@@ -1,14 +1,15 @@
+import React from "react";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { useRequestQuestions } from "../../hooks/useRequestQuestions";
 import styles from './Footer.module.css';
+import { useQuestions } from "../../context/QuestionsContext";
 
 
 const Footer = () => {
     const { currentUser } = useAuth()
-    const { isError } = useRequestQuestions()
-
+    const { isError } = useQuestions()
+    
     return (
         <>
             {

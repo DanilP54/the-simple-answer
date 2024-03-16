@@ -1,7 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
-const useRequestAuth = () => {
+const useFetchAuth = () => {
     
     const [successResetPasword , setResetPassword] = React.useState(false)
     const [isLoading, setLoading] = React.useState(false)
@@ -37,4 +37,4 @@ const useRequestAuth = () => {
 
 }
 
-export { useRequestAuth }
+export { useFetchAuth }

@@ -7,7 +7,7 @@ import { FormInput } from "./FormInput";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import { useInput } from "../hooks/useInput";
 import { Error } from "../error/Error";
-import { useRequestAuth } from "../hooks/useRequestAuth";
+import { useRequestAuth } from "../hooks/useFetchAuth";
 import styles from './styles/Form.module.css';
 
 

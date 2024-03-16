@@ -1,5 +1,5 @@
 @font-face {
-  font-display: fallback;
+  font-display: block;
   font-family: 'Honk';
   font-style: normal;
   font-weight: 400;
@@ -7,16 +7,15 @@
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: block;
   font-family: 'Poiret One';
   font-style: normal;
   font-weight: 400;
   src: url('./assets/fonts/poiret_one/poiret-one-v16-cyrillic_latin-regular.woff2') format('woff2');
 }
 
-
 @font-face {
-  font-display: fallback;
+  font-display: block;
   font-family: 'Bungee Spice';
   font-style: normal;
   font-weight: 400;

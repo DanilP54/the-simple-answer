@@ -2,28 +2,32 @@ import React from "react";
 import { TextField, IconButton } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { grey } from "@mui/material/colors";
-import { useRequestQuestions } from "../../hooks/useRequestQuestions";
 import styles from './styles/Input.module.css';
+import { useQuestions } from "../../context/QuestionsContext";
+import { useAuth } from "../../context/AuthContext";
 
 
 const Input = ({ getResultAnswer, loadingAnswer }) => {
-
+    const { currentUser } = useAuth()
     const {
         question,
         isError,
         isLoading,
-        getRandomQuestion,
-        currentUser,
-        setQuestion
-    } = useRequestQuestions()
+        setQuestion,
+        getRandomQuestion
+    } = useQuestions()
 
     const inputRef = React.useRef(null)
-    const input = inputRef.current?.querySelector('input')
-    
+
     const onChangeInput = (e) => {
         if (currentUser || isError) setQuestion(e.target.value)
     }
 
+    const handleAnswer = () => {
+        question
+            ? getResultAnswer()
+            : inputRef.current.querySelector('input').focus()
+    }
 
     return (
         <div className={styles.input__wrapper}>
@@ -53,7 +57,7 @@ const Input = ({ getResultAnswer, loadingAnswer }) => {
                 />
                 <IconButton
                     sx={{ borderRadius: 0, }}
-                    onClick={() => getResultAnswer(question, input)}
+                    onClick={handleAnswer}
                     disabled={loadingAnswer}
                     size="small"
                     color="warning"
@@ -65,7 +69,6 @@ const Input = ({ getResultAnswer, loadingAnswer }) => {
 
             </div>
             {
-
                 !isError &&
                 <button
                     type="button"

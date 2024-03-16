@@ -19,7 +19,7 @@ const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
     const auth = getAuth()
-    const [currentUser, setCurrentUser] = React.useState();
+    const [currentUser, setCurrentUser] = React.useState(null);
     const [isLoading, setLoading] = React.useState(true)
 
     function sign_up(email, password) {

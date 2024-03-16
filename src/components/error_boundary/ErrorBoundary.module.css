@@ -1,0 +1,24 @@
+.error {
+   width: 100vw;
+   min-height: 100svh; 
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+}
+
+.error__box {
+    width: 300px;
+}
+
+.title {
+    color: rgb(175, 173, 173);
+    font-size: 40px;
+}
+
+.subtitle {
+    margin-top: 10px;
+    color: rgb(175, 173, 173);
+    font-size: 17px;
+}

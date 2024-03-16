@@ -4,7 +4,7 @@ import { FormButton } from "./FormButton";
 import { FormInput } from "./FormInput";
 import { useInput } from "../hooks/useInput";
 import { Error } from "../error/Error";
-import { useRequestAuth } from "../hooks/useRequestAuth";
+import { useRequestAuth } from "../hooks/useFetchAuth";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import React from "react";
 import { useAuth } from "../context/AuthContext";

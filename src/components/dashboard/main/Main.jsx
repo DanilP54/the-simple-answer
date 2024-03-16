@@ -1,12 +1,13 @@
 import Answer from "./Answer";
 import Input from "./Input";
-import { useRequestAnswer } from "../../hooks/useRequestAnswer";
+import { useFetchAnswer } from "../../hooks/useFetchAnswer";
 import styles from './styles/Main.module.css';
+
 
 
 const Main = () => {
 
-    const { data, isLoading, isError, getResultAnswer } = useRequestAnswer()
+    const { data, isLoading, isError, getResultAnswer } = useFetchAnswer()
 
     return (
         <main className={styles.main}>

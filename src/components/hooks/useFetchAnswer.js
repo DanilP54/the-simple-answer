@@ -1,20 +1,15 @@
 import React from "react"
 
-const useRequestAnswer = () => {
+const useFetchAnswer = () => {
 
     const [data, setData] = React.useState(null)
     const [isError, setError] = React.useState('')
     const [isLoading, setLoading] = React.useState(false)
 
-    const getResultAnswer = async (questionValue, ref) => {
-        
-        if (questionValue) {
+    const getResultAnswer = async () => {
             try {
                 setLoading(true)
-                const response = await fetch('https://yesno.wtf/api')
-                if (!response.ok) {
-                    throw new Error(response.status)
-                }
+                const response = await fetch('https://yesno.wtf/ap')
                 const data = await response.json()
                 setData(data)
             }
@@ -24,10 +19,7 @@ const useRequestAnswer = () => {
             finally {
                 setLoading(false)
             }
-        } else if (ref) {
-            ref.focus()
-        }
-    }
+        } 
 
     return {
         data,
@@ -39,4 +31,4 @@ const useRequestAnswer = () => {
 
 
 
-export { useRequestAnswer }
+export { useFetchAnswer }
