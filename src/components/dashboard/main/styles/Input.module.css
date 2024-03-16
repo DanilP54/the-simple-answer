@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 1.25rem;
     align-items: center;
     justify-content: start;
 }
@@ -11,10 +11,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 10px;
+    column-gap: .63rem;
     width: 80%;
-    min-height: 80px;
-    max-width: 600px;
+    min-height: 5rem;
+    max-width: 37.5rem;
 }
 
 .input {
@@ -22,24 +22,34 @@
 }
 
 .button {
-    width: 200px;
-    height: 36px;
+    width: 12.5rem;
+    height: 2.25rem;
     font-family: "Honk", "system-ui";
-    border: none;
     cursor: pointer;
+    border: none;
     outline: none;
-    background-color: rgb(18, 135, 156);
-
+    background-color: var(--backgroundMainButton);
 }
 
 @media (hover: hover) {
+
+    .button {
+        background-color: var(--backgroundMainButton);
+    }
+
     .button:hover {
-        background-color: rgb(42, 101, 177);
+        background-color: var(--backgroundMainButtonHover);
     }
 }
 
 @media (hover: none) {
-    .button:active {
-        background-color: rgb(42, 101, 177);
+
+    .button {
+        background-color: var(--backgroundMainButton);
     }
+
+    .button:active {
+        background-color: var(--backgroundMainButtonHover);
+    }
+
 }

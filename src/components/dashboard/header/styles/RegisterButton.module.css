@@ -7,21 +7,26 @@
     background-color: transparent;
     border: none;
     outline: none;
-    width: 71px;
-    height: 40px;
-    font-size: 1rem;
+    width: 4.38rem;
+    height: 2.5rem;
+    font-size: inherit;
     border-radius: 3px;
     cursor: pointer;
 }
 
 @media (hover: hover) {
     .register__button_links button:hover {
-        background-color: rgba(86, 9, 9, 0.1);
+        background-color: var( --registerButtonLinks);
     }
 }
 
 @media (hover: none) {
+    
     .register__button_links button:active {
-        background-color: rgba(86, 9, 9, 0.1);       
+        background-color: var( --registerButtonLinks);    
+    }
+
+    .register__button_links button {
+        background-color: transparent;
     }
 }
