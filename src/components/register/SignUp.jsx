@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, Typography, FormControlLabel, Checkbox } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { FormButton } from "./FormButton";
@@ -7,7 +7,7 @@ import { FormInput } from "./FormInput";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import { useInput } from "../hooks/useInput";
 import { Error } from "../error/Error";
-import { useRequestAuth } from "../hooks/useFetchAuth";
+import { useFetchAuth } from "../hooks/useFetchAuth";
 import styles from './styles/Form.module.css';
 
 
@@ -16,7 +16,7 @@ const SignUp = () => {
     const { sign_up } = useAuth()
     const [showErrorValidate, setShowErrorValidate] = React.useState(false)
     const [showErrorConfirumPassword, setShowErrorConfirumPassword] = React.useState(false)
-    const { isLoading, sendRequest, errorResponse } = useRequestAuth()
+    const { isLoading, sendRequest, errorResponse } = useFetchAuth()
 
     const email = useInput('', {
         pattern: /.+@.+\..+/i,

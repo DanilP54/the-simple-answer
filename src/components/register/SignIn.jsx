@@ -7,7 +7,7 @@ import { FormInput } from "./FormInput";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import { useInput } from "../hooks/useInput";
 import { Error } from "../error/Error";
-import { useRequestAuth } from "../hooks/useFetchAuth";
+import { useFetchAuth } from "../hooks/useFetchAuth";
 import styles from './styles/Form.module.css';
 
 
@@ -17,7 +17,7 @@ const SignIn = () => {
 
     const { sign_in } = useAuth()
     const [showErrorValidate, setShowErrorValidate] = React.useState(false)
-    const { isLoading, errorResponse, sendRequest } = useRequestAuth()
+    const { isLoading, errorResponse, sendRequest } = useFetchAuth()
 
 
     const email = useInput('', {

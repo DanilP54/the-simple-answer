@@ -9,7 +9,7 @@ const useFetchAnswer = () => {
     const getResultAnswer = async () => {
             try {
                 setLoading(true)
-                const response = await fetch('https://yesno.wtf/ap')
+                const response = await fetch('https://yesno.wtf/api')
                 const data = await response.json()
                 setData(data)
             }

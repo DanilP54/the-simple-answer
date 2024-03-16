@@ -1,10 +1,10 @@
 import { Alert, Stack, Typography } from "@mui/material";
-import { grey, orange } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 import { FormButton } from "./FormButton";
 import { FormInput } from "./FormInput";
 import { useInput } from "../hooks/useInput";
 import { Error } from "../error/Error";
-import { useRequestAuth } from "../hooks/useFetchAuth";
+import { useFetchAuth } from "../hooks/useFetchAuth";
 import { LinearLoader } from "../liner_loader/LinearLoader";
 import React from "react";
 import { useAuth } from "../context/AuthContext";
@@ -16,7 +16,7 @@ const ForgotPassword = () => {
 
     const { reset_password } = useAuth()
     const [showErrorValidate, setShowErrorValidate] = React.useState(false)
-    const { errorResponse, isLoading, sendRequest, successResetPasword } = useRequestAuth()
+    const { errorResponse, isLoading, sendRequest, successResetPasword } = useFetchAuth()
 
     const email = useInput('', {
         pattern: /.+@.+\..+/i,
