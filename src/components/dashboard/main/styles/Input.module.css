@@ -28,7 +28,6 @@
     cursor: pointer;
     border: none;
     outline: none;
-    background-color: var(--backgroundMainButton);
 }
 
 @media (hover: hover) {
