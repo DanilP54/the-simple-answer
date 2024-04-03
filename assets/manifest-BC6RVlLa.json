@@ -53,7 +53,7 @@
       "sizes": "180x180"
     },
     {
-      "src": "/the-simple-answer/image/search-144.png",
+      "src": "/the-simple-answer/image/search-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
@@ -72,6 +72,21 @@
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
-    }
+    },
+    "screenshots": [
+      {
+        "src": "/the-simple-answer/image/search-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Wonder Widgets"
+      },
+      {
+        "src": "/the-simple-answer/image/search-256.png",
+        "sizes": "256x256",
+        "type": "image/png",
+        "form_factor": "mobile"
+      }
+    ]
   ]
 }
