@@ -5,26 +5,26 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "https://danilp54.github.io",
+  "scope": "https://danilp54.github.io/image",
   "start_url": "https://danilp54.github.io/the-simple-answer/?launchedfrom=homescreen",
   "icons": [
     {
-      "src": "image/search-16.png",
+      "src": "public/image/search-16.png",
       "type": "image/png",
       "sizes": "16x16"
     },
     {
-      "src": "image/search-48.png",
+      "src": "public/image/search-48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "image/search-64.png",
+      "src": "public/image/image/search-64.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "image/search-128.png",
+      "src": "public/image/search-128.png",
       "type": "image/png",
       "sizes": "128x128"
     }
