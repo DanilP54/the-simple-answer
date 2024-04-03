@@ -79,8 +79,7 @@
       "src": "/the-simple-answer/image/search-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "Wonder Widgets"
+      "form_factor": "wide"
     },
     {
       "src": "/the-simple-answer/image/search-256.png",
