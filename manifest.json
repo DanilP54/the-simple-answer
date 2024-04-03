@@ -1,11 +1,14 @@
 {
   "name": "The Simple Answer",
+  "dir": "auto",
   "short_name": "Ask Me",
   "theme_color": "#A094DB",
   "background_color": "#A094DB",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "https://danilp54.github.io/the-simple-answer/",
+  "start_url": "https://danilp54.github.io/the-simple-answer/?launchedfrom=homescreen",
+  "scope": "https://danilp54.github.io",
+  "id":"https://danilp54.github.io/AmijxB6QnQw0DOXL0uog",
   "icons": [
   {
     "src": "icon-72x72.png",
