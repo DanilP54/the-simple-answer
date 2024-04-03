@@ -9,22 +9,22 @@
   "start_url": "https://danilp54.github.io/the-simple-answer/?launchedfrom=homescreen",
   "icons": [
     {
-      "src": "public/image/search-16.png",
+      "src": "/the-simple-answer/image/search-16.png",
       "type": "image/png",
       "sizes": "16x16"
     },
     {
-      "src": "public/image/search-48.png",
+      "src": "/the-simple-answer/image/search-48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "public/image/image/search-64.png",
+      "src": "/the-simple-answer/image/image/search-64.png",
       "type": "image/png",
       "sizes": "64x64"
     },
     {
-      "src": "public/image/search-128.png",
+      "src": "/the-simple-answer/image/search-128.png",
       "type": "image/png",
       "sizes": "128x128"
     }
