@@ -1,11 +1,11 @@
 {
   "name": "The Simple Answer",
   "short_name": "Your Answer",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/the-simple-answer/?launchedfrom=homescreen",
+  "start_url": "/the-simple-answer",
   "icons": [
     {
       "src": "/the-simple-answer/image/search-16.png",
@@ -68,7 +68,7 @@
       "sizes": "512x512"
     },
     {
-      "src": "/the-simple-answer/image/icon-maskable.png",
+      "src": "/the-simple-answer/image/maskable-icon.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
