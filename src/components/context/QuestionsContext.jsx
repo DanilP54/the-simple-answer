@@ -15,22 +15,22 @@ const QuestionsProvider = ({ children }) => {
     
     const {currentUser} = useAuth()
     const [question, setQuestion] = React.useState('')
-    const choosenQuestion = React.useRef(new Set())
+    const chosenQuestion = React.useRef(new Set())
   
     const { data, isError, isLoading } = useFetchQuestions()
 
     function getRandomQuestion() {
         let randomIndex;
 
-        if (data?.questionList?.length === choosenQuestion.current.size) {
-            choosenQuestion.clear()
+        if (data?.questionList?.length === chosenQuestion.current.size) {
+            chosenQuestion.clear()
         }
 
         do {
             randomIndex = Math.floor(Math.random() * data.questionList.length)
-        } while (choosenQuestion.current.has(data.questionList[randomIndex]))
+        } while (chosenQuestion.current.has(data.questionList[randomIndex]))
 
-        choosenQuestion.current.add(data.questionList[randomIndex])
+        chosenQuestion.current.add(data.questionList[randomIndex])
         setQuestion(data.questionList[randomIndex])
     }
 

@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
 
-const FETCH_URL = 'https://auth-test-e4a35-default-rtdb.europe-west1.firebasedatabase.app/data.json'
+const GET_QUESTIONS_URL = 'https://auth-test-e4a35-default-rtdb.europe-west1.firebasedatabase.app/data.json'
 
 const fetchQuestinsList = async () => {
-    const response = await fetch(FETCH_URL)
+    const response = await fetch(GET_QUESTIONS_URL)
     return response.json()
 }
 
